@@ -8,7 +8,8 @@ end = dt(2022,6,1)
 
 # Getting EU Milk price from CLAI
 
-eu = pd.read_excel('https://www.clal.it/upload/eu-milk-historical-price-series_en06072022.xlsx', usecols='B:AC,AE', header=6, index_col=28, nrows=546)[['Germany', 'France', 'Netherlands', 'Italy', 'Poland', 'Irleand', 'Spain', 'Denmark', 'Belgium', 'Austria', 'EU\n\n(without UK)']]
+# eu = pd.read_excel('https://www.clal.it/upload/eu-milk-historical-price-series_en06072022.xlsx', usecols='B:AC,AE', header=6, index_col=28, nrows=546)[['Germany', 'France', 'Netherlands', 'Italy', 'Poland', 'Irleand', 'Spain', 'Denmark', 'Belgium', 'Austria', 'EU\n\n(without UK)']]
+eu = pd.read_excel('https://ec.europa.eu/info/sites/default/files/food-farming-fisheries/farming/documents/eu-milk-historical-price-series_en.xlsx', usecols='B:AC,AE', header=6, index_col=28, nrows=546)[['Germany', 'France', 'Netherlands', 'Italy', 'Poland', 'Irleand', 'Spain', 'Denmark', 'Belgium', 'Austria', 'EU\n\n(without UK)']]
 eu.rename(columns = {'Irleand':'Ireland', 'EU\n\n(without UK)':'EU(without UK)'}, inplace = True)
 
 
