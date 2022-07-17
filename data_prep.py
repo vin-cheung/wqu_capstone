@@ -4,14 +4,6 @@ import numpy as np
 from datetime import datetime as dt
 import investpy
 
-cny_usd = investpy.currency_crosses.get_currency_cross_historical_data('CNY/USD','01/01/1990','01/05/2022')['Close']
-cny_usd = cny_usd.resample('M').mean()
-cny_usd.to_csv('cny_usd.csv')
-
-eur_usd = investpy.currency_crosses.get_currency_cross_historical_data('EUR/USD','01/01/1990','01/05/2022')['Close']
-eur_usd = eur_usd.resample('M').mean()
-eur_usd.to_csv('eur_usd.csv')
-
 start = dt(1992,1,1)
 end = dt(2022,6,1)
 
@@ -21,8 +13,6 @@ end = dt(2022,6,1)
 # eu = pd.read_excel('https://www.clal.it/upload/eu-milk-historical-price-series_en06072022.xlsx', usecols='B:AC,AE', header=6, index_col=28, nrows=546)[['Germany', 'France', 'Netherlands', 'Italy', 'Poland', 'Irleand', 'Spain', 'Denmark', 'Belgium', 'Austria', 'EU\n\n(without UK)']]
 eu = pd.read_excel('https://ec.europa.eu/info/sites/default/files/food-farming-fisheries/farming/documents/eu-milk-historical-price-series_en.xlsx', usecols='B:AC,AE', header=6, index_col=28, nrows=546)[['Germany', 'France', 'Netherlands', 'Italy', 'Poland', 'Irleand', 'Spain', 'Denmark', 'Belgium', 'Austria', 'EU\n\n(without UK)']]
 eu.rename(columns = {'Irleand':'Ireland', 'EU\n\n(without UK)':'EU(without UK)'}, inplace = True)
-
-
 
 # Getting US Milk price from quickstats
 
@@ -43,6 +33,15 @@ cn = pd.Series(cn_raw, index = pd.date_range('2009-1-1', freq='MS', periods=len(
 
 #fred = pdr.get_data_fred(['MCOILBRENTEU', 'MCOILWTICO', 'MHHNGSP', 'PBARLUSDM', 'PMAIZMTUSDM', 'PNGASEUUSDM', 'PSOYBUSDM', 'PWHEAMTUSDM', 'GDP', 'DGOERC1Q027SBEA', 'IPG32411S', 'A33DNO'], start, end)
 fred = pdr.get_data_fred(['MCOILBRENTEU', 'MCOILWTICO', 'MHHNGSP', 'PBARLUSDM', 'PMAIZMTUSDM', 'PNGASEUUSDM', 'PSOYBUSDM', 'PWHEAMTUSDM', 'IPG32411S', 'A33DNO'], start, end)
+
+cny_usd = investpy.currency_crosses.get_currency_cross_historical_data('CNY/USD','01/01/2009','01/06/2022')['Close']
+cny_usd = cny_usd.resample('M').mean()
+cny_usd.index = cn.index
+
+eur_usd = investpy.currency_crosses.get_currency_cross_historical_data('EUR/USD','01/01/1992','01/06/2022')['Close']
+eur_usd = eur_usd.resample('M').mean()
+eur_usd.index = eu.loc[start:].index
+
 
 # Convert to USD
 EUmilkpriceUSD = eu.mul(eur_usd,axis=0)
