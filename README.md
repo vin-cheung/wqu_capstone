@@ -1,6 +1,10 @@
 # wqu_capstone
 Milk &amp; Oil Analysis using Pycaret
 
-First Attempt with the other commodities (crude oil, corn, etc.) as explanatory variables and the China Raw Milk price as target.
+To download the data, run the following line
 
-Use all kinds of regression models for comparison.
+`python data_prep_Alessandro.py`
+
+To install all the libraries run:
+
+`pip install -r requirements.txt`
