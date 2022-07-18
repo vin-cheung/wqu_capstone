@@ -32,7 +32,7 @@ cn = pd.Series(cn_raw, index = pd.date_range('2009-1-1', freq='MS', periods=len(
 # Getting other commodity prices from FRED
 
 #fred = pdr.get_data_fred(['MCOILBRENTEU', 'MCOILWTICO', 'MHHNGSP', 'PBARLUSDM', 'PMAIZMTUSDM', 'PNGASEUUSDM', 'PSOYBUSDM', 'PWHEAMTUSDM', 'GDP', 'DGOERC1Q027SBEA', 'IPG32411S', 'A33DNO'], start, end)
-fred = pdr.get_data_fred(['MCOILBRENTEU', 'MCOILWTICO', 'MHHNGSP', 'PBARLUSDM', 'PMAIZMTUSDM', 'PNGASEUUSDM', 'PSOYBUSDM', 'PWHEAMTUSDM', 'IPG32411S', 'A33DNO'], start, end)
+fred = pdr.get_data_fred(['MCOILBRENTEU', 'MCOILWTICO', 'MHHNGSP', 'PBARLUSDM', 'PMAIZMTUSDM', 'PNGASEUUSDM', 'PSOYBUSDM', 'PWHEAMTUSDM', 'IPG32411S', 'A33DNO', 'PCEC96'], start, end)
 
 cny_usd = investpy.currency_crosses.get_currency_cross_historical_data('CNY/USD','01/01/2009','01/06/2022')['Close']
 cny_usd = cny_usd.resample('M').mean()
