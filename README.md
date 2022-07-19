@@ -5,15 +5,15 @@ To download the data, run the following line
 
 `python data_prep_Alessandro.py`
 
-To install all the libraries run:
+To install all the required libraries, create a separate virtual environment (either by conda or venv) and run:
 
 `pip install -r requirements.txt`
 
-# EDAandRegressions.ipynb
-This is the main file. It contains the EDA and the regressions.
+# Milk_EDA_Regressions.ipynb
+This notebook focus on the EDA and regression models in different time periods.
 
 # Milk_Cluster.ipynb
-This file contains the milk price cluster analysis.
+This notebook focus on the unsupervised cluster analysis.
 
-# milk_regression_states_countries.ipynb
-This file contains the regression models for each state/country
+# Milk_Feature_Imprance.ipynb
+This notebook focus on identifying the most important features (influencing econometric factors) for each state/country.
