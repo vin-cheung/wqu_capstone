@@ -1,4 +1,4 @@
-# wqu_capstone
+# WQU Capstone - Leading Causes in the Correlation between Milk and Oil Prices
 Milk &amp; Oil Analysis using Pycaret
 
 To download the data, run the following line
