@@ -3,7 +3,7 @@ Milk &amp; Oil Analysis using Pycaret
 
 To download the data, run the following line
 
-`python data_prep_Alessandro.py`
+`python data_prep.py`
 
 To install all the required libraries, create a separate virtual environment (either by conda or venv) and run:
 
