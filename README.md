@@ -15,5 +15,5 @@ This notebook focus on the EDA and regression models in different time periods.
 ## Milk_Cluster.ipynb
 This notebook focus on the unsupervised cluster analysis.
 
-## Milk_Feature_Imprance.ipynb
+## Milk_Feature_Importance.ipynb
 This notebook focus on identifying the most important features (influencing econometric factors) for each state/country.
