@@ -9,7 +9,7 @@ To install all the required libraries, create a separate virtual environment (ei
 
 `pip install -r requirements.txt`
 
-## Milk_EDA_Special_Regressions.ipynb
+## Milk_EDA_Special_Regression.ipynb
 This notebook focus on the EDA and regression models in different time periods.
 
 ## Milk_Cluster.ipynb
