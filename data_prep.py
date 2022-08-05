@@ -25,7 +25,7 @@ us.rename(columns = {'Us Total':'US Total'}, inplace = True)
 
 cn_raw = pd.read_html('https://www.clal.it/en/index.php?section=latte_cina')[9].iloc[2:14,0::2].iloc[:,:-2].to_numpy(dtype=float).T.flatten()
 cn_raw = cn_raw[~np.isnan(cn_raw)]
-cn = pd.Series(cn_raw, index = pd.date_range('2009-1-1', freq='MS', periods=len(cn_raw)), name='China')
+cn = pd.Series(cn_raw, index = pd.date_range('2009-1-1', freq='MS', periods=len(cn_raw)))
 
 
 # Getting other commodity prices from FRED
@@ -44,7 +44,7 @@ eur_usd.index = eu.loc[start:].index
 
 # Convert to USD
 EUmilkpriceUSD = eu.mul(eur_usd,axis=0)
-chinamilkpriceUSD = cn.mul(cny_usd,axis=0)
+chinamilkpriceUSD = cn.mul(cny_usd).rename('China')
 
 # exporting to pickle format for easy loading for different analysis notebooks
 EUmilkpriceUSD.to_pickle('data/eu.pickle')
